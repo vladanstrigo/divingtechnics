@@ -1,13 +1,65 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title>Diving Technics - diving school by Vladan Strigo</title>
-<style>
-	body {
-		background-color:black;
-	}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Diving Technics</title>
+  <style>
+    /* Reset + base */
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    /* Fullscreen background */
+    body {
+      /* Uses the attached photo as a cover background */
+      background-image: url("background.jpg");
+      background-size: cover;       /* always cover the screen */
+      background-position: center;  /* keep it centered */
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* nice feel on desktop; ignored on many mobiles */
+      display: grid;
+      place-items: center;          /* centers horizontally & vertically */
+      min-height: 100vh;            /* fallback */
+      min-height: 100svh;           /* better on mobile browsers */
+    }
+
+    /* Optional subtle backdrop for legibility on busy photos */
+    .logo-wrap {
+      padding: clamp(12px, 2vw, 20px);
+      border-radius: 16px;
+      background: rgba(0,0,0,0.25);
+      backdrop-filter: blur(2px);
+    }
+
+    /* Responsive logo sizing */
+    .logo {
+      display: block;
+      width: min(80vw, 560px);
+      height: auto;
+    }
+
+    /* Respect reduced motion users */
+    @media (prefers-reduced-motion: no-preference) {
+      .logo-wrap { transition: background 200ms ease-in-out; }
+      .logo-wrap:hover { background: rgba(0,0,0,0.35); }
+    }
+  </style>
 </head>
 <body>
-	<img src="Diving Technics Logo 2024.png" alt="Diving Technics - diving school by Vladan Strigo"/>
+  <div class="logo-wrap" role="img" aria-label="Diving Technics Logo">
+    <!-- Use the exact filename you provided (URL-encoded for spaces) -->
+    <img
+      class="logo"
+      src="diving%20Technics%20logo%202025%20-%20with%20mascot.png"
+      alt="Diving Technics logo with diver mascot"
+      loading="eager"
+      decoding="async"
+    />
+    <br/>
+    Contact us - <a href="mailto:divingtechnics@gmail.com">Need a course?</a>
+
+  </div>
 </body>
 </html>
